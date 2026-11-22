@@ -1,0 +1,51 @@
+{
+  "categories": [
+    {
+      "name": "Groceries",
+      "subcategories": [
+        "Vegetables & Fruits",
+        "Dairy",
+        "Staples",
+        "Snacks",
+        "Household Supplies"
+      ]
+    },
+    {
+      "name": "Food",
+      "subcategories": [
+        "Restaurants",
+        "Takeaway",
+        "Coffee & Tea"
+      ]
+    },
+    {
+      "name": "Transport",
+      "subcategories": [
+        "Fuel",
+        "Public Transport",
+        "Taxi",
+        "Maintenance",
+        "Parking & Tolls"
+      ]
+    },
+    {
+      "name": "Utilities",
+      "subcategories": [
+        "Electricity",
+        "Water",
+        "Internet",
+        "Mobile",
+        "Gas"
+      ]
+    },
+    {
+      "name": "Entertainment",
+      "subcategories": [
+        "Movies",
+        "Subscriptions",
+        "Games",
+        "Events"
+      ]
+    }
+  ]
+}
