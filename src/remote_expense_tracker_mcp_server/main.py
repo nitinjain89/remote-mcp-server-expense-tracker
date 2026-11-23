@@ -19,11 +19,11 @@ def get_db_connection():
 def get_authenticated_user() -> str:
     """Request ke Authorization header se API key nikal kar verified user_id return karta hai."""
     headers = get_http_headers()
-    auth_header = headers.get("authorization", "")
+    auth_header = headers.get("x-api-key", "")
 
     if not auth_header.startswith("Bearer "):
         raise ValueError(
-            "Unauthorized: Missing or invalid Authorization header. Expected"
+            "Unauthorized: Missing X-API-Key header."
         " 'Bearer <API_KEY>'."
         )
 
