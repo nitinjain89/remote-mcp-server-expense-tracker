@@ -4,7 +4,7 @@ import os
 import psycopg
 from psycopg.rows import dict_row
 
-# Environment variable se Supabase URL uthayega
+# Environment variable se Supabase URL uthayega..
 DATABASE_URL = os.environ.get("DATABASE_URL")
 if not DATABASE_URL:
     raise RuntimeError("DATABASE_URL environment variable is not set!")
@@ -193,7 +193,6 @@ def analyze_monthly_spending(month: str, budget_limit: float) -> str:
       f" budget of ₹{budget_limit:.2f}, highlight the top spending categories,"
       " and give 3 actionable tips to save money next month."
   )
-
 
 if __name__ == "__main__":
   mcp.run(transport="http", host="0.0.0.0", port=8000)
