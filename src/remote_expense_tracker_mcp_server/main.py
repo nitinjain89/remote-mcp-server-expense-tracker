@@ -1,5 +1,5 @@
 from fastmcp import FastMCP
-from fastmcp.server.dependencies import get_http_headers
+from fastmcp.server.dependencies import get_http_headers, get_http_request
 import os
 import psycopg
 from psycopg.rows import dict_row
@@ -18,16 +18,14 @@ def get_db_connection():
 
 def get_authenticated_user() -> str:
     """Request ke Authorization header se API key nikal kar verified user_id return karta hai."""
-    headers = get_http_headers()
-    auth_header = headers.get("x-api-key", "")
+    headers = get_http_headers(include_all=True)
+    api_key = headers.get("x-api-key", "").strip()
 
-    if not auth_header.startswith("Bearer "):
+    if not api_key:
         raise ValueError(
             "Unauthorized: Missing X-API-Key header."
         " 'Bearer <API_KEY>'."
         )
-
-    api_key = auth_header.replace("Bearer ", "").strip()
 
     with get_db_connection() as conn:
         with conn.cursor() as cur:
